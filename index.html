@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Payments Dashboard</title>
+    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/keen-dashboards.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="application">
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a class="navbar-brand" href="./">Payments Dashboard</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-left">
+                    <li><a href="https://www.payzen.eu/">Home</a>
+                    </li>
+                    <li><a href="https://www.payzen.eu/support/integration-payzen/">Integration</a>
+                    </li>
+                </ul>
+                <form class="navbar-form navbar-right" role="search">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="text" class="form-control input-group" name="shop" placeholder="Company Shop">
+                            </input>
+                            <span class="input-group-btn"> 
+                                <button type="submit" class="btn btn-default" type="button">Go!</button>
+                            </span>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row alert alert-info alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+            </button>
+            <strong>Note:</strong> navigate by time and currencies selecting representations segments.
+        </div>
+
+        <div class="row">
+
+            <div class="col-sm-4">
+                <div class="chart-wrapper">
+                    <div class="chart-title">
+                        Count by currency
+                    </div>
+                    <div class="chart-stage">
+                        <div id="chart-02"></div>
+                    </div>
+                    <div class="chart-notes">
+                        Count payments by currency.
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-8">
+                <div class="chart-wrapper">
+                    <div class="chart-title">
+                        <div class="btn-group" data-toggle="buttons">
+                            <label class="btn btn-xs btn-primary active">
+                                <input type="radio" name="options" id="mode-turnover" autocomplete="off" checked data-range="turnover">Turnover
+                            </label>
+                            <label class="btn btn-xs btn-primary">
+                                <input type="radio" name="options" id="mode-average" autocomplete="off" data-range="average">Average
+                            </label>
+                        </div>
+                        <div class="btn-group" data-toggle="buttons" style="float:right">
+                            <label class="btn btn-xs btn-primary active">
+                                <input type="radio" name="options" id="time-all" autocomplete="off" checked data-range="all">All
+                            </label>
+                            <label class="btn btn-xs btn-primary">
+                                <input type="radio" name="options" id="time-month" autocomplete="off" data-range="month">Month
+                            </label>
+                            <label class="btn btn-xs btn-primary">
+                                <input type="radio" name="options" id="time-week" autocomplete="off" data-range="week">Week
+                            </label>
+                            <label class="btn btn-xs btn-primary">
+                                <input type="radio" name="options" id="time-day" autocomplete="off" data-range="day">Day
+                            </label>
+                        </div>
+                    </div>
+                    <div class="chart-stage">
+                        <div id="chart-01"></div>
+                    </div>
+                    <div class="chart-notes">
+                        Successfull payments over time.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="row">
+
+            <div class="col-sm-4">
+                <div class="chart-wrapper">
+                    <div class="chart-title">
+                        Amounts by card type
+                    </div>
+                    <div class="chart-stage">
+                        <div id="chart-03"></div>
+                    </div>
+                    <div class="chart-notes">
+                        Repartition of payments by card type.
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="chart-wrapper">
+                    <div class="chart-title">
+                        Amounts by status
+                    </div>
+                    <div class="chart-stage">
+                        <div id="chart-04"></div>
+                    </div>
+                    <div class="chart-notes">
+                        Repartition of payments by status.
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="chart-wrapper">
+                    <div class="chart-title">
+                        Amounts by decline reason
+                    </div>
+                    <div class="chart-stage">
+                        <div id="chart-05"></div>
+                    </div>
+                    <div class="chart-notes">
+                        Repartition of declined payments by reason.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <hr>
+
+        <p class="small text-muted">Built by <a href="https://www.payzen.eu/">Payzen</a>
+        </p>
+
+    </div>
+
+    <script src="jquery/dist/jquery.min.js"></script>
+    <script src="bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="moment.min.js"></script>
+    <script src="accounting.min.js"></script>
+
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+    <script src="constants.js"></script>
+    <script src="utils.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+
+</html>
